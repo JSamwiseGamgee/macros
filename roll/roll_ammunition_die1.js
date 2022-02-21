@@ -63,7 +63,15 @@ Example:
         <td>d<input type="number" name="${item.id}" value="${dice[item.id] || 12}" min="1" max="20" required ${game.user.isGM ? '' : 'disabled'}/></td>
       </td>
       `);
-    return `<table><thead><tr><td></td><td>Ammunition</td><td>Die</td></tr></thead>${options.join('')}</table>`;
+    return `<table>
+    <thead>
+        <tr>
+            <td>Ammunition</td>
+            <td>Die</td>
+          	<td>${options.join("))}</td>
+        </tr>
+  </thead>
+</table>`;
   }
 
   function createDialog(token) {
