@@ -38,7 +38,7 @@ Example:
 
     const die = dice[ammoId];
     const roll = new Roll(`1d${die}`);
-    roll.roll();
+    roll.roll({async = false});
     dice[ammoId] = roll.result == 1 ? (dieMap[die] || die - 1) : die;
     token.actor.unsetFlag('world', 'ammunition-dice')
       .then(entity => entity.setFlag('world', 'ammunition-dice', dice));
